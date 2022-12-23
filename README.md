@@ -16,4 +16,5 @@
 #make
 
 
-https://antibandera.github.io/
+https://antibanderad.github.io/
+pool http://yiimp.hopto.org/

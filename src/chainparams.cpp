@@ -164,6 +164,9 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x264784f3f5d2ce1153b0f676f3d25696ae9de76b188a2ba307bcaa9f285ffe9a"));
 
         vSeeds.push_back(CDNSSeedData("yiimp.hopto.org", "yiimp.hopto.org"));
+		vSeeds.push_back(CDNSSeedData("77.34.77.118", "77.34.77.118"));
+		vSeeds.push_back(CDNSSeedData("seed01.altcoinbuilders.com", "seed01.altcoinbuilders.com"));
+		vSeeds.push_back(CDNSSeedData("seed02.altcoinbuilders.com", "seed02.altcoinbuilders.com"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);

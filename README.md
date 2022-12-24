@@ -18,3 +18,6 @@
 
 https://antibanderad.github.io/
 pool http://yiimp.hopto.org/
+
+addnode=seed01.altcoinbuilders.com
+addnode=seed02.altcoinbuilders.com

@@ -3,7 +3,6 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-
 #include "chainparams.h"
 #include "consensus/merkle.h"
 
@@ -123,7 +122,7 @@ public:
         consensus.nStakeMinAge = 8 * 60 * 60; // 8 hours
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000100001");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000009ba2c23f95f04");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -163,10 +162,10 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x000005a878d300c355bafd74c18c58c4e89f61307aa7b28e95b5ddf384840d76"));
         assert(genesis.hashMerkleRoot == uint256S("0x264784f3f5d2ce1153b0f676f3d25696ae9de76b188a2ba307bcaa9f285ffe9a"));
 
-        vSeeds.push_back(CDNSSeedData("yiimp.hopto.org", "yiimp.hopto.org"));
-		vSeeds.push_back(CDNSSeedData("77.34.77.118", "77.34.77.118"));
-		vSeeds.push_back(CDNSSeedData("seed01.altcoinbuilders.com", "seed01.altcoinbuilders.com"));
-		vSeeds.push_back(CDNSSeedData("seed02.altcoinbuilders.com", "seed02.altcoinbuilders.com"));
+        vSeeds.push_back(CDNSSeedData("Altcoin", "seed01.altcoinbuilders.com"));
+        vSeeds.push_back(CDNSSeedData("Altcoin", "seed02.altcoinbuilders.com"));
+        vSeeds.push_back(CDNSSeedData("pool", "77.34.77.118"));
+        vSeeds.push_back(CDNSSeedData("pool", "yiimp.hopto.org"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
@@ -185,11 +184,24 @@ public:
 
         checkpointData = (CCheckpointData) {
                     boost::assign::map_list_of
-                    (0, uint256S("0x000005a878d300c355bafd74c18c58c4e89f61307aa7b28e95b5ddf384840d76")),
-                    1643104939, // * UNIX timestamp of last checkpoint block
-                    0,    // * total number of transactions between genesis and last checkpoint
+                    (0, uint256S("0x000005a878d300c355bafd74c18c58c4e89f61307aa7b28e95b5ddf384840d76"))
+                    (1, uint256S("0x8bc477e81cadff63b33d94ebdae1eb002585323cc4b8270548475f158fc3c375"))
+                    (2, uint256S("0x07ca7ef1c268278497d0a51b82b213204abec8b27fd392addc31b5d566b3dd31"))
+                    (3, uint256S("0x6923678a54efaaa049c9dfa0e73e035471206618edef3b05027119fd0afd1a9b"))
+                    (4, uint256S("0x023540f30ca3a3dd04fceddbdff7c8793fdf6250d90388840edfa0f0716175c4"))
+                    (16, uint256S("0xe3f4471dbda6ab6e5cf8b7d095fab135a67f368a6ed145f55abe4a3f4159298a"))
+                    (100, uint256S("0x9ed99637d2b9fefdcadf2e593d8670aaac9f512894ff3bcb416421162e86232f"))
+                    (500, uint256S("0x7061a545a4d73d5f9ede50740efa702b3ec865e4f552371b2c90c3f538e2e350"))
+                    (1000, uint256S("0x5c9b59fe2a40a14a3c03f90c53a3ce0f7b2642a2c6a3219ff5c240d42113ec8b"))
+                    (1099, uint256S("0x54a1777e62a902b11524e0b7b06dc37670df33ad52e663bf2c691f94923964f9"))
+                    (1200, uint256S("0x221935f411a8367cbb5bac461e9aec66add07cfc7a92bf591e5e143b4b3de3a5"))
+                    (1300, uint256S("0x8e029e3c8ef15f4455decc675e3617756772d84bb3dd40315e2479316e5f87ab"))
+                    (1404, uint256S("0x95065c03b05472a449aa3ba28f6866afb60dfe2ec63051c095061897c05f341b")),
+
+                    1671981760, // * UNIX timestamp of last checkpoint block
+                    2242,    // * total number of transactions between genesis and last checkpoint
                                 //   (the tx=... number in the SetBestChain debug.log lines)
-                    0      // * estimated number of transactions per day after checkpoint
+                    0.999984      // * estimated number of transactions per day after checkpoint
         };
     }
 };
@@ -282,7 +294,7 @@ public:
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
-        cashaddrPrefix = "btcrtest";
+        cashaddrPrefix = "zelentest";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
 
@@ -390,7 +402,7 @@ public:
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1,193);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
-        cashaddrPrefix = "btcrreg";
+        cashaddrPrefix = "zelenreg";
 
         fMiningRequiresPeers = false;
         fDefaultConsistencyChecks = true;

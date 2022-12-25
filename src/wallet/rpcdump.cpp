@@ -549,11 +549,11 @@ UniValue dumpprivkey(const UniValue& params, bool fHelp)
     
     if (fHelp || params.size() != 1)
         throw runtime_error(
-            "dumpprivkey \"bitcoinrocketaddress\"\n"
-            "\nReveals the private key corresponding to 'bitcoinrocketaddress'.\n"
+            "dumpprivkey \"antibanderaaddress\"\n"
+            "\nReveals the private key corresponding to 'antibanderaaddress'.\n"
             "Then the importprivkey can be used with this output\n"
             "\nArguments:\n"
-            "1. \"bitcoinrocketaddress\"   (string, required) The bitcoinrocket address for the private key\n"
+            "1. \"antibanderaaddress\"   (string, required) The antibandera address for the private key\n"
             "\nResult:\n"
             "\"key\"                (string) The private key\n"
             "\nExamples:\n"

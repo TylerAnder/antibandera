@@ -7,17 +7,17 @@ define(_CLIENT_VERSION_BUILD, 0)
 define(_CLIENT_VERSION_IS_RELEASE, true)
 define(_COPYRIGHT_YEAR, 2022)
 define(_COPYRIGHT_HOLDERS,[The %s developers])
-define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Zelen]])
-AC_INIT([Zelen],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/antibandera/zelen],[zelen])
+define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[AntiBandera]])
+AC_INIT([AntiBandera],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/dmitriy79/antibandera],[antibandera])
 AC_CONFIG_SRCDIR([src/main.cpp])
 AC_CONFIG_HEADERS([src/config/bitcoin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
-BITCOIN_DAEMON_NAME=zelend
-BITCOIN_GUI_NAME=zelen-qt
-BITCOIN_CLI_NAME=zelen-cli
-BITCOIN_TX_NAME=zelen-tx
+BITCOIN_DAEMON_NAME=antibanderad
+BITCOIN_GUI_NAME=antibandera-qt
+BITCOIN_CLI_NAME=antibandera-cli
+BITCOIN_TX_NAME=antibandera-tx
 
 AC_CANONICAL_HOST
 

@@ -61,13 +61,13 @@ def template_to_hex(tmpl, txlist):
     return b2x(template_to_bytearray(tmpl, txlist))
 
 def assert_template(node, tmpl, txlist, expect):
-    rsp = node.antibandera({'data':template_to_hex(tmpl, txlist),'mode':'proposal'})
+    rsp = node.getblocktemplate({'data':template_to_hex(tmpl, txlist),'mode':'proposal'})
     if rsp != expect:
         raise AssertionError('unexpected: %s' % (rsp,))
 
-class antibanderaProposalTest(BitcoinTestFramework):
+class GetBlockTemplateProposalTest(BitcoinTestFramework):
     '''
-    Test block proposals with antibandera.
+    Test block proposals with getblocktemplate.
     '''
 
     def __init__(self):
@@ -82,7 +82,7 @@ class antibanderaProposalTest(BitcoinTestFramework):
     def run_test(self):
         node = self.nodes[0]
         node.generate(1) # Mine a block to leave initial block download
-        tmpl = node.antibandera()
+        tmpl = node.getblocktemplate()
         if 'coinbasetxn' not in tmpl:
             rawcoinbase = encodeUNum(tmpl['height'])
             rawcoinbase += b'\x01-'
@@ -140,7 +140,7 @@ class antibanderaProposalTest(BitcoinTestFramework):
         # Test 9: Bad merkle root
         rawtmpl = template_to_bytearray(tmpl, txlist)
         rawtmpl[4+32] = (rawtmpl[4+32] + 1) % 0x100
-        rsp = node.antibandera({'data':b2x(rawtmpl),'mode':'proposal'})
+        rsp = node.getblocktemplate({'data':b2x(rawtmpl),'mode':'proposal'})
         if rsp != 'bad-txnmrklroot':
             raise AssertionError('unexpected: %s' % (rsp,))
 
@@ -160,4 +160,4 @@ class antibanderaProposalTest(BitcoinTestFramework):
         assert_template(node, tmpl, txlist, 'inconclusive-not-best-prevblk')
 
 if __name__ == '__main__':
-    antibanderaProposalTest().main()
+    GetBlockTemplateProposalTest().main()

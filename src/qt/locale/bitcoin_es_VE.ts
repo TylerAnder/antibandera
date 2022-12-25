@@ -115,7 +115,7 @@
     </message>
     <message>
         <source>Send coins to a Bitcoin address</source>
-        <translation>Enviar monedas a una dirección BitcoinRocket</translation>
+        <translation>Enviar monedas a una dirección AntiBandera</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -131,7 +131,7 @@
     </message>
     <message>
         <source>Bitcoin</source>
-        <translation>BitcoinRocket</translation>
+        <translation>AntiBandera</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -159,11 +159,11 @@
     </message>
     <message>
         <source>Sign messages with your Bitcoin addresses to prove you own them</source>
-        <translation>Firma mensajes con tus direcciones BitcoinRocket para probar que eres dueño de ellas</translation>
+        <translation>Firma mensajes con tus direcciones AntiBandera para probar que eres dueño de ellas</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
-        <translation>Verificar mensajes para asegurar que estaban firmados con direcciones BitcoinRocket especificas</translation>
+        <translation>Verificar mensajes para asegurar que estaban firmados con direcciones AntiBandera especificas</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -609,7 +609,7 @@
     </message>
     <message>
         <source>Bitcoin Core</source>
-        <translation>BitcoinRocket</translation>
+        <translation>AntiBandera</translation>
     </message>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>

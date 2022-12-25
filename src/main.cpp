@@ -67,7 +67,7 @@
 using namespace std;
 
 #if defined(NDEBUG)
-# error "antibandera cannot be compiled without assertions."
+# error "AntiBandera cannot be compiled without assertions."
 #endif
 
 /**
@@ -131,7 +131,7 @@ static void CheckBlockIndex(const Consensus::Params& consensusParams);
 /** Constant stuff for coinbase transactions we create: */
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "antibandera Signed Message:\n";
+const string strMessageMagic = "AntiBandera Signed Message:\n";
 
 // Internal stuff
 namespace {
@@ -2500,9 +2500,9 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
 
     // BIP66 is always active
     flags |= SCRIPT_VERIFY_DERSIG;
-    // antibandera also requires DER encoding of pubkeys
+    // AntiBandera also requires DER encoding of pubkeys
     flags |= SCRIPT_VERIFY_DERKEY;
-    // antibandera also requires low S in sigs
+    // AntiBandera also requires low S in sigs
     flags |= SCRIPT_VERIFY_LOW_S;
 
     // Start enforcing CHECKLOCKTIMEVERIFY, (BIP65) since protocol v3

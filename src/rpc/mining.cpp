@@ -358,17 +358,17 @@ std::string gbt_vb_name(const Consensus::DeploymentPos pos) {
     return s;
 }
 
-UniValue antibandera(const UniValue& params, bool fHelp)
+UniValue getblocktemplate(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() > 1)
         throw runtime_error(
-            "antibandera ( TemplateRequest )\n"
+            "getblocktemplate ( TemplateRequest )\n"
             "\nIf the request parameters include a 'mode' key, that is used to explicitly select between the default 'template' request or a 'proposal'.\n"
             "It returns data needed to construct a block to work on.\n"
             "For full specification, see BIPs 22, 23, and 9:\n"
             "    https://github.com/bitcoin/bips/blob/master/bip-0022.mediawiki\n"
             "    https://github.com/bitcoin/bips/blob/master/bip-0023.mediawiki\n"
-            "    https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki#antibandera_changes\n"
+            "    https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki#getblocktemplate_changes\n"
 
             "\nArguments:\n"
             "1. TemplateRequest          (json object, optional) A json object in the following spec\n"
@@ -431,8 +431,8 @@ UniValue antibandera(const UniValue& params, bool fHelp)
             "}\n"
 
             "\nExamples:\n"
-            + HelpExampleCli("antibandera", "")
-            + HelpExampleRpc("antibandera", "")
+            + HelpExampleCli("getblocktemplate", "")
+            + HelpExampleRpc("getblocktemplate", "")
          );
 
     LOCK(cs_main);
@@ -504,13 +504,13 @@ UniValue antibandera(const UniValue& params, bool fHelp)
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid mode");
 
     if (vNodes.empty())
-        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "Zelen is not connected!");
+        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "Bitcoin is not connected!");
 
     if (IsInitialBlockDownload())
-        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "Zelen is downloading blocks...");
+        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "Bitcoin is downloading blocks...");
 
-    if (chainActive.Tip()->nHeight > 0)
-    	throw JSONRPCError(RPC_MISC_ERROR, "Invalid mode");
+    if (chainActive.Tip()->nHeight > Params().GetConsensus().nLastPOWBlock)
+    	throw JSONRPCError(RPC_MISC_ERROR, "No more PoW blocks");
 
     static unsigned int nTransactionsUpdatedLast;
 
@@ -582,9 +582,9 @@ UniValue antibandera(const UniValue& params, bool fHelp)
             pblocktemplate = NULL;
         }
         CScript scriptDummy = CScript() << OP_TRUE;
-        pblocktemplate = BlockAssembler(Params()).CreateNewBlock(scriptDummy);
+        pblocktemplate = BlockAssembler(Params()).CreateNewBlock(scriptDummy, 0, false);
         if (!pblocktemplate)
-            throw JSONRPCError(RPC_OUT_OF_MEMORY, "");
+            throw JSONRPCError(RPC_OUT_OF_MEMORY, "Out of memory");
 
         // Need to update only after we know CreateNewBlock succeeded
         pindexPrev = pindexPrevNew;
@@ -840,10 +840,10 @@ UniValue checkkernel(const UniValue& params, bool fHelp)
         bool fCreateBlockTemplate = params.size() > 1 ? params[1].get_bool() : false;
 
         if (vNodes.empty())
-            throw JSONRPCError(-9, "Zelen is not connected!");
+            throw JSONRPCError(-9, "AntiBandera is not connected!");
 
         if (IsInitialBlockDownload())
-            throw JSONRPCError(-10, "Zelen is downloading blocks...");
+            throw JSONRPCError(-10, "AntiBandera is downloading blocks...");
 
         COutPoint kernel;
         CBlockIndex* pindexPrev = chainActive.Tip();
@@ -1025,7 +1025,7 @@ static const CRPCCommand commands[] =
     { "mining",             "getnetworkhashps",       &getnetworkhashps,       true  },
     { "mining",             "getmininginfo",          &getmininginfo,          true  },
     { "mining",             "prioritisetransaction",  &prioritisetransaction,  true  },
-    { "mining",             "antibandera",       &antibandera,       true  },
+    { "mining",             "getblocktemplate",       &getblocktemplate,       true  },
     { "mining",             "submitblock",            &submitblock,            true  },
     { "mining",             "checkkernel",            &checkkernel,            true  },
     { "mining",             "getstakinginfo",         &getstakinginfo,         true  },

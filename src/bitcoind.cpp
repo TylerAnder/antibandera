@@ -136,7 +136,7 @@ bool AppInit(int argc, char* argv[])
         fDaemon = GetBoolArg("-daemon", false);
         if (fDaemon)
         {
-            fprintf(stdout, "antibandera server starting\n");
+            fprintf(stdout, "AntiBandera server starting\n");
 
             // Daemonize
             pid_t pid = fork();

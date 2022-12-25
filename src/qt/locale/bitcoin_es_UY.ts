@@ -111,7 +111,7 @@
     </message>
     <message>
         <source>Send coins to a Bitcoin address</source>
-        <translation>Enviar monedas a una dirección BitcoinRocket</translation>
+        <translation>Enviar monedas a una dirección AntiBandera</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
@@ -119,7 +119,7 @@
     </message>
     <message>
         <source>Bitcoin</source>
-        <translation>BitcoinRocket</translation>
+        <translation>AntiBandera</translation>
     </message>
     <message>
         <source>Wallet</source>

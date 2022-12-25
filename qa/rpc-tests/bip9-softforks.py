@@ -89,7 +89,7 @@ class BIP9SoftForksTest(ComparisonTestFramework):
         self.last_block_time = int(time.time())
 
         assert_equal(self.get_bip9_status(bipName)['status'], 'defined')
-        tmpl = self.nodes[0].antibandera({})
+        tmpl = self.nodes[0].getblocktemplate({})
         assert(bipName not in tmpl['rules'])
         assert(bipName not in tmpl['vbavailable'])
         assert_equal(tmpl['vbrequired'], 0)
@@ -101,7 +101,7 @@ class BIP9SoftForksTest(ComparisonTestFramework):
         yield TestInstance(test_blocks, sync_every_block=False)
 
         assert_equal(self.get_bip9_status(bipName)['status'], 'started')
-        tmpl = self.nodes[0].antibandera({})
+        tmpl = self.nodes[0].getblocktemplate({})
         assert(bipName not in tmpl['rules'])
         assert_equal(tmpl['vbavailable'][bipName], bitno)
         assert_equal(tmpl['vbrequired'], 0)
@@ -117,7 +117,7 @@ class BIP9SoftForksTest(ComparisonTestFramework):
         yield TestInstance(test_blocks, sync_every_block=False)
 
         assert_equal(self.get_bip9_status(bipName)['status'], 'started')
-        tmpl = self.nodes[0].antibandera({})
+        tmpl = self.nodes[0].getblocktemplate({})
         assert(bipName not in tmpl['rules'])
         assert_equal(tmpl['vbavailable'][bipName], bitno)
         assert_equal(tmpl['vbrequired'], 0)
@@ -133,7 +133,7 @@ class BIP9SoftForksTest(ComparisonTestFramework):
         yield TestInstance(test_blocks, sync_every_block=False)
 
         assert_equal(self.get_bip9_status(bipName)['status'], 'locked_in')
-        tmpl = self.nodes[0].antibandera({})
+        tmpl = self.nodes[0].getblocktemplate({})
         assert(bipName not in tmpl['rules'])
 
         # Test 4
@@ -142,7 +142,7 @@ class BIP9SoftForksTest(ComparisonTestFramework):
         yield TestInstance(test_blocks, sync_every_block=False)
 
         assert_equal(self.get_bip9_status(bipName)['status'], 'locked_in')
-        tmpl = self.nodes[0].antibandera({})
+        tmpl = self.nodes[0].getblocktemplate({})
         assert(bipName not in tmpl['rules'])
 
         # Test 5
@@ -167,7 +167,7 @@ class BIP9SoftForksTest(ComparisonTestFramework):
         yield TestInstance([[block, True]])
 
         assert_equal(self.get_bip9_status(bipName)['status'], 'active')
-        tmpl = self.nodes[0].antibandera({})
+        tmpl = self.nodes[0].getblocktemplate({})
         assert(bipName in tmpl['rules'])
         assert(bipName not in tmpl['vbavailable'])
         assert_equal(tmpl['vbrequired'], 0)

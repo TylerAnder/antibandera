@@ -489,7 +489,7 @@ std::string HelpMessage(HelpMessageMode mode)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/antibanderaBTCR/bitcoin-rocket>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/dmitriy79/antibandera>";
     const std::string URL_WEBSITE = "<https://antibandera.online/>";
     // todo: remove urls from translations on next change
 
@@ -500,9 +500,9 @@ std::string LicenseInfo()
            "\n" +
            FormatParagraph(strprintf("Copyright (C) %i-%i The Blackcoin More Developers", 2018, COPYRIGHT_YEAR)) + "\n" +
            "\n" +
-           FormatParagraph(strprintf("Copyright (C) %i The antibandera Developers", 2022)) + "\n" +
+           FormatParagraph(strprintf("Copyright (C) %i The AntiBandera Developers & TYlerAnderson T.A", 2022)) + "\n" +
            "\n" +
-           FormatParagraph(strprintf(_("Please contribute if you find antibandera useful. "
+           FormatParagraph(strprintf(_("Please contribute if you find AntiBandera useful. "
                        "Visit %s for further information about the software."),
                URL_WEBSITE)) +
            "\n" +

@@ -12,18 +12,18 @@ class LongpollThread(threading.Thread):
     def __init__(self, node):
         threading.Thread.__init__(self)
         # query current longpollid
-        templat = node.antibandera()
+        templat = node.getblocktemplate()
         self.longpollid = templat['longpollid']
         # create a new connection to the node, we can't use the same
         # connection from two threads
         self.node = get_rpc_proxy(node.url, 1, timeout=600)
 
     def run(self):
-        self.node.antibandera({'longpollid':self.longpollid})
+        self.node.getblocktemplate({'longpollid':self.longpollid})
 
-class antibanderaLPTest(BitcoinTestFramework):
+class GetBlockTemplateLPTest(BitcoinTestFramework):
     '''
-    Test longpolling with antibandera.
+    Test longpolling with getblocktemplate.
     '''
 
     def __init__(self):
@@ -34,10 +34,10 @@ class antibanderaLPTest(BitcoinTestFramework):
     def run_test(self):
         print("Warning: this test will take about 70 seconds in the best case. Be patient.")
         self.nodes[0].generate(10)
-        templat = self.nodes[0].antibandera()
+        templat = self.nodes[0].getblocktemplate()
         longpollid = templat['longpollid']
         # longpollid should not change between successive invocations if nothing else happens
-        templat2 = self.nodes[0].antibandera()
+        templat2 = self.nodes[0].getblocktemplate()
         assert(templat2['longpollid'] == longpollid)
 
         # Test 1: test that the longpolling wait if we do nothing
@@ -70,5 +70,5 @@ class antibanderaLPTest(BitcoinTestFramework):
         assert(not thr.is_alive())
 
 if __name__ == '__main__':
-    antibanderaLPTest().main()
+    GetBlockTemplateLPTest().main()
 

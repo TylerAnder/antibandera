@@ -16,8 +16,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "antibandera"
-            VALUE "FileDescription",    "antibandera-tx (CLI antibandera transaction editor utility)"
+            VALUE "CompanyName",        "AntiBandera"
+            VALUE "FileDescription",    "antibandera-tx (CLI AntiBandera transaction editor utility)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "antibandera-tx"
             VALUE "LegalCopyright",     COPYRIGHT_STR

@@ -24,17 +24,17 @@ In case you want to build the disk image with `make deploy` (.dmg / optional), y
 
 NOTE: Building with Qt4 is still supported, however, could result in a broken UI. Building with Qt5 is recommended.
 
-Build Zelen
+Build AntiBandera
 ------------------------
 
-1. Clone the Zelen source code and cd into `Zelen`
+1. Clone the antibandera source code and cd into `antibandera`
 
-        git clone https://gitlab.com/Zelen/Zelen/
-        cd Zelen
+        git clone https://gitlab.com/antibandera/antibandera/
+        cd antibandera
 
-2.  Build Zelen:
+2.  Build antibandera:
 
-    Configure and build the headless Zelen binaries as well as the GUI (if Qt is found).
+    Configure and build the headless antibandera binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
 
@@ -53,37 +53,37 @@ Build Zelen
 Running
 -------
 
-Zelen is now available at `./src/Zelend`
+AntiBandera is now available at `./src/antibanderad`
 
 Before running, it's recommended you create an RPC configuration file.
 
-    echo -e "rpcuser=Zelenrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Zelen/Zelen.conf"
+    echo -e "rpcuser=antibanderarpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/AntiBandera/antibandera.conf"
 
-    chmod 600 "/Users/${USER}/Library/Application Support/Zelen/Zelen.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/AntiBandera/antibandera.conf"
 
-The first time you run Zelend, it will start downloading the blockchain. This process could take several hours.
+The first time you run antibanderad, it will start downloading the blockchain. This process could take several hours.
 
 You can monitor the download process by looking at the debug.log file:
 
-    tail -f $HOME/Library/Application\ Support/Zelen/debug.log
+    tail -f $HOME/Library/Application\ Support/AntiBandera/debug.log
 
 Other commands:
 -------
 
-    ./src/Zelend -daemon # Starts the Zelen daemon.
-    ./src/Zelen-cli --help # Outputs a list of command-line options.
-    ./src/Zelen-cli help # Outputs a list of RPC commands when the daemon is running.
+    ./src/antibanderad -daemon # Starts the antibandera daemon.
+    ./src/antibandera-cli --help # Outputs a list of command-line options.
+    ./src/antibandera-cli help # Outputs a list of RPC commands when the daemon is running.
 
 Using Qt Creator as IDE
 ------------------------
-You can use Qt Creator as an IDE, for Zelen development.
+You can use Qt Creator as an IDE, for antibandera development.
 Download and install the community edition of [Qt Creator](https://www.qt.io/download/).
 Uncheck everything except Qt Creator during the installation process.
 
 1. Make sure you installed everything through Homebrew mentioned above
 2. Do a proper ./configure --enable-debug
 3. In Qt Creator do "New Project" -> Import Project -> Import Existing Project
-4. Enter "Zelen-qt" as project name, enter src/qt as location
+4. Enter "antibandera-qt" as project name, enter src/qt as location
 5. Leave the file selection as it is
 6. Confirm the "summary page"
 7. In the "Projects" tab select "Manage Kits..."

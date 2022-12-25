@@ -115,7 +115,7 @@
     </message>
     <message>
         <source>Bitcoin</source>
-        <translation>BitcoinRocket</translation>
+        <translation>AntiBandera</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -485,7 +485,7 @@
     </message>
     <message>
         <source>Bitcoin Core</source>
-        <translation>BitcoinRocket</translation>
+        <translation>AntiBandera</translation>
     </message>
     <message>
         <source>Information</source>

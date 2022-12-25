@@ -1259,7 +1259,7 @@
     </message>
     <message>
         <source>Bitcoin Core</source>
-        <translation>BitcoinRocket</translation>
+        <translation>AntiBandera</translation>
     </message>
     <message>
         <source>Do you want to rebuild the block database now?</source>

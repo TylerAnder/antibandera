@@ -1,12 +1,12 @@
 *.tar.gz
 
 *.exe
-src/zelen
-src/zelend
-src/zelen-cli
-src/zelen-tx
-src/test/test_zelen
-src/qt/test/test_zelen-qt
+src/antibandera
+src/antibanderad
+src/antibandera-cli
+src/antibandera-tx
+src/test/test_antibandera
+src/qt/test/test_antibandera-qt
 
 # autoreconf
 Makefile.in
@@ -45,11 +45,11 @@ src/qt/forms/ui_*.h
 
 src/qt/test/moc*.cpp
 
-src/qt/zelen-qt.config
-src/qt/zelen-qt.creator
-src/qt/zelen-qt.creator.user
-src/qt/zelen-qt.files
-src/qt/zelen-qt.includes
+src/qt/antibandera-qt.config
+src/qt/antibandera-qt.creator
+src/qt/antibandera-qt.creator.user
+src/qt/antibandera-qt.files
+src/qt/antibandera-qt.includes
 
 .deps
 .dirstamp
@@ -86,8 +86,8 @@ src/qt/zelen-qt.includes
 *.qm
 Makefile
 !depends/Makefile
-src/qt/zelen-qt
-zelen-Qt.app
+src/qt/antibandera-qt
+AntiBandera-Qt.app
 background.tiff*
 
 # Qt Creator
@@ -95,7 +95,7 @@ Makefile.am.user
 
 # Unit-tests
 Makefile.test
-zelen-qt_test
+antibandera-qt_test
 src/test/buildenv.py
 
 # Resources cpp

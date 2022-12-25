@@ -99,7 +99,7 @@ const int64_t nStartupTime = GetTime();
 using namespace std;
 
 const char * const BITCOIN_CONF_FILENAME = "antibandera.conf";
-const char * const BITCOIN_PID_FILENAME = "antibandera.pid";
+const char * const BITCOIN_PID_FILENAME = "antibanderad.pid";
 
 map<string, string> mapArgs;
 map<string, vector<string> > mapMultiArgs;
@@ -454,13 +454,13 @@ void PrintExceptionContinue(const std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\antibandera
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\antibandera
-    // Mac: ~/Library/Application Support/antibandera
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\AntiBandera
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\AntiBandera
+    // Mac: ~/Library/Application Support/AntiBandera
     // Unix: ~/.antibandera
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "zelen";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "AntiBandera";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -470,10 +470,10 @@ boost::filesystem::path GetDefaultDataDir()
         pathRet = fs::path(pszHome);
 #ifdef MAC_OSX
     // Mac
-    return pathRet / "Library/Application Support/zelen";
+    return pathRet / "Library/Application Support/AntiBandera";
 #else
     // Unix
-    return pathRet / ".zelen";
+    return pathRet / ".antibandera";
 #endif
 #endif
 }
@@ -817,7 +817,7 @@ std::string CopyrightHolders(const std::string& strPrefix)
         strPrefix + "The Bitcoin Core developers" +
         "\n" + strPrefix + "The Blackcoin developers" +
         "\n" + strPrefix + "The Blackcoin More developers";
-        "\n" + strPrefix + "antibandera developers";
+        "\n" + strPrefix + "AntiBandera developers";
 
     return strCopyrightHolders;
 }

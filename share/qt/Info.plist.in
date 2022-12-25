@@ -29,16 +29,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>BitcoinRocket-Qt</string>
+  <string>AntiBandera-Qt</string>
   
   <key>CFBundleName</key>
-  <string>BitcoinRocket-Qt</string>
+  <string>AntiBandera-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.bitcoinrocket.BitcoinRocket-Qt</string>
+  <string>org.antibandera.AntiBandera-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>

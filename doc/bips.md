@@ -6,7 +6,7 @@ BIPs that are implemented by Bitcoin Core (up-to-date up to **v0.13.0**):
 * [`BIP 14`](https://github.com/bitcoin/bips/blob/master/bip-0014.mediawiki): The subversion string is being used as User Agent since **v0.6.0** ([PR #669](https://github.com/bitcoin/bitcoin/pull/669)).
 * [`BIP 16`](https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki): The pay-to-script-hash evaluation rules have been implemented since **v0.6.0**, and took effect on *April 1st 2012* ([PR #748](https://github.com/bitcoin/bitcoin/pull/748)).
 * [`BIP 21`](https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki): The URI format for Bitcoin payments has been implemented since **v0.6.0** ([PR #176](https://github.com/bitcoin/bitcoin/pull/176)).
-* [`BIP 22`](https://github.com/bitcoin/bips/blob/master/bip-0022.mediawiki): The '' (GBT) RPC protocol for mining has been implemented since **v0.7.0** ([PR #936](https://github.com/bitcoin/bitcoin/pull/936)).
+* [`BIP 22`](https://github.com/bitcoin/bips/blob/master/bip-0022.mediawiki): The 'getblocktemplate' (GBT) RPC protocol for mining has been implemented since **v0.7.0** ([PR #936](https://github.com/bitcoin/bitcoin/pull/936)).
 * [`BIP 23`](https://github.com/bitcoin/bips/blob/master/bip-0023.mediawiki): Some extensions to GBT have been implemented since **v0.10.0rc1**, including longpolling and block proposals ([PR #1816](https://github.com/bitcoin/bitcoin/pull/1816)).
 * [`BIP 30`](https://github.com/bitcoin/bips/blob/master/bip-0030.mediawiki): The evaluation rules to forbid creating new transactions with the same txid as previous not-fully-spent transactions were implemented since **v0.6.0**, and the rule took effect on *March 15th 2012* ([PR #915](https://github.com/bitcoin/bitcoin/pull/915)).
 * [`BIP 31`](https://github.com/bitcoin/bips/blob/master/bip-0031.mediawiki): The 'pong' protocol message (and the protocol version bump to 60001) has been implemented since **v0.6.1** ([PR #1081](https://github.com/bitcoin/bitcoin/pull/1081)).
@@ -29,11 +29,11 @@ BIPs that are implemented by Bitcoin Core (up-to-date up to **v0.13.0**):
 * [`BIP 141`](https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki): Segregated Witness (Consensus Layer) as of **v0.13.0** ([PR 8149](https://github.com/bitcoin/bitcoin/pull/8149)), and defined for mainnet as of **v0.13.1** ([PR 8937](https://github.com/bitcoin/bitcoin/pull/8937)).
 * [`BIP 143`](https://github.com/bitcoin/bips/blob/master/bip-0143.mediawiki): Transaction Signature Verification for Version 0 Witness Program as of **v0.13.0** ([PR 8149](https://github.com/bitcoin/bitcoin/pull/8149)) and defined for mainnet as of **v0.13.1** ([PR 8937](https://github.com/bitcoin/bitcoin/pull/8937)).
 * [`BIP 144`](https://github.com/bitcoin/bips/blob/master/bip-0144.mediawiki): Segregated Witness as of **0.13.0** ([PR 8149](https://github.com/bitcoin/bitcoin/pull/8149)).
-* [`BIP 145`](https://github.com/bitcoin/bips/blob/master/bip-0145.mediawiki): updates for Segregated Witness as of **v0.13.0** ([PR 8149](https://github.com/bitcoin/bitcoin/pull/8149)).
+* [`BIP 145`](https://github.com/bitcoin/bips/blob/master/bip-0145.mediawiki): getblocktemplate updates for Segregated Witness as of **v0.13.0** ([PR 8149](https://github.com/bitcoin/bitcoin/pull/8149)).
 * [`BIP 147`](https://github.com/bitcoin/bips/blob/master/bip-0147.mediawiki): NULLDUMMY softfork as of **v0.13.1** ([PR 8636](https://github.com/bitcoin/bitcoin/pull/8636) and [PR 8937](https://github.com/bitcoin/bitcoin/pull/8937)).
 * [`BIP 152`](https://github.com/bitcoin/bips/blob/master/bip-0152.mediawiki): Compact block transfer and related optimizations are used as of **v0.13.0** ([PR 8068](https://github.com/bitcoin/bitcoin/pull/8068)).
 
-BIPs disabled in BitcoinRocket (up-to-date up to **v2.13.2.8**):
+BIPs disabled in AntiBandera (up-to-date up to **v2.13.2.8**):
 * [`BIP 68`](https://github.com/bitcoin/bips/blob/master/bip-0068.mediawiki)
 * [`BIP 112`](https://github.com/bitcoin/bips/blob/master/bip-0112.mediawiki)
 * [`BIP 113`](https://github.com/bitcoin/bips/blob/master/bip-0113.mediawiki)
